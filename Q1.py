@@ -47,19 +47,22 @@ def sampling(steps):
 call the sampling function 10 times
 store results in list "avg"
 '''
-avg=[]
+final=[]
 steps=[1000,2000,4000,8000]
 start_time = time.time()
 for i in range(10):
     temp=np.asarray(sampling(steps))
-    avg.append(temp)
-final=[sum(e)/len(e) for e in zip(*avg)]
+    final.append(temp)
+avg=[sum(e)/len(e) for e in zip(*final)]
+mat=np.vstack(final)
+st=np.std(mat,axis=0)
 print("The model ran for %s seconds" % (time.time() - start_time))
-
+print("The means are: ", avg)
+print("The standard deviations for each step are: ", st)
 
 #---------Plot Test Error Rate--------
 # plot the averaged test error rate with sample size increasing
-plt.plot(steps,final,"-d")
+plt.errorbar(steps,avg,yerr=st,fmt="-0")
 plt.grid()
 plt.xlabel("sample size")
 plt.ylabel("test error rate")

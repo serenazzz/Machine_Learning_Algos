@@ -9,7 +9,7 @@ Q1(Serena):
 
 * (a) To find the vector xi that has the minimal Euclidean distance from x, it suffices to find xi that has the minimal squared Euclidean distance. Therefore, for each row tj in test data, we calculate its squared Euclidean distance to each row xi in training data and find xi\* that yields the smallest result. To achieve this, we leverage the given formula for the calculation:
 
- *  for each tj in test data, we get the last term of the formula X\*X.T by obtaining the diagnal of the dot product of X and X.T
+ * for each tj in test data, we get the last term of the formula X\*X.T by obtaining the diagnal of the dot product of X and X.T
  * for the second term -2T.T\*X, we simply take the dot product of X and T.T
  * as the first term is the same for every tj in the test data, we can ignore this term in our calculation
 
@@ -17,7 +17,7 @@ In the end, for each tj, we obtain an array of the squared Euclidean distance be
 
 As a final step, we predict yi\* for tj by using index i*.
 * (b) See plot
-* (c) It would be a horizontal line at test error rate = 0 as the data we use to evaluate is the same as the data we used to train.
+* (c) It would be a horizontal line at test error rate = 0 as the nearest neighbor for data in the training set is itself, which results in training error rate of 0.
 
 Q2(Brian):
 
