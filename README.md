@@ -17,7 +17,7 @@ In the end, for each tj, we obtain an array of the squared Euclidean distance be
 
 As a final step, we predict yi\* for tj by using index i*.
 * (b) See plot
-* (c) It would be a horizontal line at test error rate = 0 as the nearest neighbor for data in the training set is itself, which results in training error rate of 0.
+* (c) It would be a horizontal line at training error rate = 0 as the nearest neighbor for data in the training set is itself, which results in training error rate of 0.
 
 Q2(Brian):
 
