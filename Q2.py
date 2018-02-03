@@ -101,9 +101,9 @@ for i in range(4):
 
 
 
-'''
-Test risk for the sparse linear predictor
-'''
+
+# Solution to 2a: Test risk for the sparse linear predictor
+
 SLP_yhat = testdata[:,SLP_minMSEIndex] @ SLP_minMSEBetas
 SLP_MSE = (SLP_yhat.T @ SLP_yhat - 2*(SLP_yhat.T @ testlabels) + testlabels.T @ testlabels)/len(SLP_yhat)
 
