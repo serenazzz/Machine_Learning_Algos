@@ -51,7 +51,7 @@ def vectorizeTFIDF(x):
     idf_diag = sp.spdiags(idf, diags=0, m=x.shape[1],n=x.shape[1], format='csr')
     return (x @ idf_diag,droplist)
 
-tfidf_x = vectorizeTFIDF(unigram_x)
+tfidf_x = vectorizeTFIDF(unigram_x)[0]
 tfidf_test,tfidf_test_droplist = vectorizeTFIDF(unigram_test)
 tfidf_words = unigram_vectorizer.get_feature_names()+['INTERCEPT']
 
